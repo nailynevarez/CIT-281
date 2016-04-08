@@ -40,7 +40,7 @@ sftp-config.json
 
 # images
 
-#*.jpg
+
 #video
 *.wmv
 *.mpg
