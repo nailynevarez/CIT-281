@@ -3,4 +3,4 @@
 
 [My Sass vCard on UOregon.edu](http://pages.uoregon.edu/nailyn/281/p1/sass-proj/)
 
-[QR Code](sass-proj/images/qrcode.jpg)
+[QR Code for Sass vCard](sass-proj/images/qrcode.jpg)
