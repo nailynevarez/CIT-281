@@ -30,7 +30,7 @@ function isMember(arr, Strng) {
 
     }
     return false;
-};
+}
 
 var hasOneEven = function(arr) {
     var i;
