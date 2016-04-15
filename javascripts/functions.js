@@ -1,4 +1,3 @@
-
 //arrAvg accepts an array of numbers and returns the average of the array
 function arrAvg(numbers) {
     "use strict";
