@@ -53,15 +53,16 @@ function isMember(arr, Strng) {
 function maxWord(sentence) {
     "use strict";
     //declare variables
-    var longestWord = 0;
+    var longestString = 0;
     var string = sentence.split(" ");
     var word = 0;
     //find the longest word
     for (var i = 0; i < string.length; i++) {
-        if (longestWord < string[i].length) {
-            longestWord = string[i];
+        if (longestString < string[i].length) {
+            longestString = string[i].length;
+            word = string[i];
         }
     }
     //return the length of the longest word
-    return longestWord.length;
+    return word.length;
 }
