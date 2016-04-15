@@ -1,88 +1,68 @@
-function arrAvg([numbers]) {
+
+//arrAvg accepts an array of numbers and returns the average of the array
+function arrAvg(numbers) {
     "use strict";
+    //declare variables
     var sum = 0;
     var i = 0;
     var average;
-
+    //calculate sum and average
     for (i; i < numbers.length; i++) {
         sum = sum + numbers[i];
         average = (sum / numbers.length);
     };
+    //return the average
     return average;
 };
 
+
+//arrMax accepts array of numbers and returns the largest number in the array
 function arrMax(numbers) {
     "use strict";
+    //declare variables
     var max;
     var i = 0;
+    //find largest number in array
     for (i; i < numbers.length; i++) {
         if (numbers[i] > numbers.length - 1) {
             max = numbers[i];
         }
     };
+    //return the largest number
     return max;
 };
 
+//isMember accepts an array of strings and a string
+//returns true if string in the array and false otherwise
 function isMember(arr, Strng) {
     "use strict";
+    //declare variable
     var i;
+    //check and see if the string is in the array, return true if it is
     for (i = 0; i < arr.length; i++) {
         if (arr[i] === Strng) {
             return true;
         }
 
     }
+    //return false if it is not in the array 
     return false;
 }
 
-/*hasOneEven returns true if arr contains at least one even number*/
-var hasOneEven = function(arr) {
-    "use strict";
-    var i;
-    //search for even number in arr
-    for (i = 0; i < arr.length; ++i) {
-        if (arr[i] % 2 === 0)
-        //hit
-            return true;
-    }
-    //miss
-    return false;
-};
-
-var a = [3, 5, 7, 2];
-var sum = 0;
-a.forEach(function(val) {
-    sum = sum + val; 
-});
-
-var a = ["a", "b", "c", "d", "a"];
-var isMember = function(arr, s) {
-    timesSoFar = 0;
-    arr.forEach(function(value) {
-        if(value === s){
-            //hit
-        timesSoFar = timesSoFar + 1;
-    }
-    });
-    //return result
-    if (timesSoFar >= 2)
-    return true;
-    else 
-    return false;
-};
-
-
-
+//Extra Credit Function
+/*maxWord accepts a sentence and returns the length of the longest word in the sentence*/
 function maxWord(sentence) {
     "use strict";
-    var longestString = 0;
+    //declare variables
+    var longestWord = 0;
     var string = sentence.split(" ");
     var word = 0;
+    //find the longest word
     for (var i = 0; i < string.length; i++) {
-        if (longestString < string[i].length) {
-            longestString = string[i].length;
-            word = string[i];
+        if (longestWord < string[i].length) {
+            longestWord = string[i];
         }
     }
-    return word.length;
+    //return the length of the longest word
+    return longestWord.length;
 }
