@@ -19,11 +19,11 @@ function arrAvg(numbers) {
 function arrMax(numbers) {
     "use strict";
     //declare variables
-    var max;
+    var max = 0;
     var i = 0;
     //find largest number in array
     for (i; i < numbers.length; i++) {
-        if (numbers[i] > numbers.length - 1) {
+        if (numbers[i] > max) {
             max = numbers[i];
         }
     };
