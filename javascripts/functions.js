@@ -22,22 +22,20 @@ function arrMax(numbers) {
 };
 
 function isMember(arr, Strng) {
-var i;
+    var i;
     for (i = 0; i < arr.length; i++) {
         if (arr[i] === Strng) {
             return true;
         }
-        else {
-            return false;
-        }
-    }
 
+    }
+    return false;
 }
 
 var hasOneEven = function(arr) {
-var i;
+    var i;
     for (i = 0; i < arr.length; i++) {
-        if (arr[i]/2 = 0) {
+        if (arr[i] / 2 = 0) {
             return true
         }
     }
@@ -54,4 +52,4 @@ function maxWord(sentence) {
         }
     }
     return word.length;
-}   
+}
