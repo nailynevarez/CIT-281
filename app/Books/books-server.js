@@ -34,7 +34,7 @@ app.get('/books', function(req, res) {
 });
 
 
-app.post('/book', function(req, res) {
+app.post('/add-book', function(req, res) {
   var newBook = new Book();
 
   newBook.title = req.body.title;
