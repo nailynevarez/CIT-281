@@ -8,6 +8,7 @@ var port = 3000;
 var db = 'mongodb://localhost/example'
 
 mongoose.connect(db);
+app.use(express.static(__dirname + "/client"));
 
 
 app.use(bodyParser.json())

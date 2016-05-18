@@ -1,26 +1,32 @@
-var main = function () {
+var main = function() {
     "use strict";
 
     var requestURL = "/books";
 
+    //$("main .photos").html("");
+    //console.log($("main .photos").html());
+
     $.getJSON(requestURL, function(flickrResponse) {
-        flickrResponse.items.forEach(function (item) {
+        //console.log(flickrResponse);
+        flickrResponse.forEach(function(item) {
+            var bkitem = bookToHTMLstr(item);
+            //console.log(bkitem);
+            $("main").append(bkitem);
+            //console.log($("main .photos").html());
 
-            // create a new JQuery element to hold the image
-            // but hide it so we can fade it in
-            var $img = $("<img>").hide();
-
-            // set the attribute to the url
-            // contained in the response
-            $img.attr("src", item.media.m);
-
-            // attach the img tag to the main
-            // photos element and then fade it in
-            $("main .photos").append($img);
-            $img.fadeIn();
         });
 
     });
 };
 
 $(document).ready(main);
+
+
+
+function bookToHTMLstr(book) {
+
+    var result = "<h4 style='display:inline'>Item</h4><br>Title: " +
+        book.title + "<br>" + "Author: " + book.author + "<br>" + "Category: " + book.category + "<br>" + "ID: " + book._id + "<br>";
+
+    return result;
+};
