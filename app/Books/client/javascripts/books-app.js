@@ -11,7 +11,7 @@ var main = function() {
         flickrResponse.forEach(function(item) {
             var bkitem = bookToHTMLstr(item);
             //console.log(bkitem);
-            $("main").append(bkitem);
+            $("main .photos").prepend(bkitem);
             //console.log($("main .photos").html());
 
         });

@@ -8,13 +8,12 @@ var port = 3000;
 var db = 'mongodb://localhost/example'
 
 mongoose.connect(db);
-app.use(express.static(__dirname + "/client"));
-
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({
   extended: true
 }));
+app.use(express.static(__dirname + "/client"));
 
 app.get('/', function(req, res) {
   res.send('Hello World!');
@@ -47,7 +46,7 @@ app.post('/add-book', function(req, res) {
       res.send('error saving book');
     } else {
       console.log(book);
-      res.send(book);
+      res.redirect("/confirm-add.html");;
     }
   });
 });
