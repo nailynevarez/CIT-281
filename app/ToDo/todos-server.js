@@ -34,17 +34,16 @@ app.get('/todos', function(req, res) {
     });
 });
 
-
 app.post('/add-todo', function(req, res) {
-  var todos = new todos();
+  var newtodo = new todos();
 
-  newtodos.content = req.body.content;
+  newtodo.content = req.body.content;
 
-  newtodos.save(function(err, todos) {
+  newtodo.save(function(err, todo) {
     if(err) {
       res.send('error saving todo item');
     } else {
-      console.log(todos);
+      console.log(todo);
       res.redirect("/index.html");;
     }
   });
