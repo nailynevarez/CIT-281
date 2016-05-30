@@ -1,0 +1,100 @@
+@import "compass";
+@import "normalize";
+$base: #A8A8A8;
+$dark: darken($base, 20%);
+$width: 900px;
+$space: $width / 10; // = 20px
+$img: image-width("client/images/books.png") + (($space / 4) * 2);
+.float-left {
+    float: left;
+}
+
+.box-sizing {
+    @include box-sizing(border-box);
+}
+
+html {
+    height: 100%;
+    background-color: $base;
+}
+
+.vcard {
+    width: $width;
+    margin: 50px auto;
+    background-color: darken($base, 10%);
+    border: 1px solid $dark;
+    @include border-radius(1px);
+    ul {
+        padding: 0;
+        margin: 0;
+        li {
+            list-style: none;
+        }
+    }
+}
+
+.bio  {
+    border-bottom: 1px solid $dark;
+    padding: $space;
+    @extend .box-sizing;
+    img {
+        @extend .float-left;
+        display: block;
+        border: ($space / 6) solid #ffffff;
+    }
+    .detail {
+        @extend .float-left;
+        @extend .box-sizing;
+        color: darken($base, 80%);
+        margin: {
+            left: $space;
+            bottom: $space / 2;
+        }
+        width: $width - (($space * 1) + $img);
+        li {
+            &:before {
+                width: $space;
+                height: $space;
+                margin-right: $space;
+
+                font-family: "ModernPictogramsNormal";
+            }
+           
+            &.email:before {
+                content: "m";
+            }
+            &.phone:before {
+                content: "N";
+            }
+        }
+    }
+}
+
+.name {
+    font-size: 30px;
+}
+
+.social {
+    background-color: $dark;
+    width: 100%;
+    padding: $space;
+    @extend .box-sizing;
+    ul {
+        text-align: center;
+        li {
+            display: inline-block;
+            width: 32px;
+            height: 32px;
+            a {
+                text-decoration: none;
+                display: inline-block;
+                width: 100%;
+                height: 100%;
+                text-indent: 100%;
+                white-space: nowrap;
+                overflow: hidden;
+            }
+        }
+    }
+}
+

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/link-button.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/forms.css">
+</head>
+
+<body>
+    <div class="vcard">
+        <section class="bio cf">
+            <img src="images/books.png" width="80" height="80">
+            <div class="detail">
+                <ul>
+                    <li class="name"><b>Books R Us</b></li>
+                    <br>
+                    <li class="desc">Fill in the form to add a title.</li>
+                </ul>
+            </div>
+            <br><br><br><br><br>
+             <nav>
+            <span class="link_button"><a href="index.html"> Home </a></span>
+            <span class="link_button"><a href="add-book.html">Add Book</a></span>
+            </nav>
+        </section>
+        <section class="social cf">
+            <main>
+                <form action="/add-book" method="Post" class="form">
+                    <p>
+                        Title:
+                        <input name="title" class ="box">
+                    </p>
+                    <p>
+                        Author:
+                        <input name="author" class ="box">
+                    </p>
+                    <p>
+                        Category:
+                        <input name="category" class ="box">
+                    </p>
+                    <input type="submit" value="Submit Book" class ="submit">
+                </form>
+            </main>
+        </section>
+    </div>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="javascripts/books-app.js"></script>
+</body>
+
+</html>
