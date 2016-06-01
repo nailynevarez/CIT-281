@@ -1,33 +1,32 @@
-var main = function () {
+var main = function() {
     "use strict";
-    
-    if (localStorage.getItem("toDoList")) {
-        $(".comments").html(localStorage.getItem("toDoList"));
-    };
-    
 
-    var addCommentFromInputBox = function () {
-        var $new_comment;
+    var requestURL = "/todos";
 
-        if ($(".comment-input input").val() !== "") {
-            $new_comment = $("<p>").text($(".comment-input input").val());
-            //$new_comment.hide();
-            $(".comments").append($new_comment);
-            localStorage.setItem("toDoList", $(".comments").html());
-            //$new_comment.fadeIn();
-            $(".comment-input input").val("");
-        }
-    };
+    //$("main .photos").html("");
+    //console.log($("main .photos").html());
 
-    $(".comment-input button").on("click", function (event) {
-        addCommentFromInputBox();
-    });
+    $.getJSON(requestURL, function(toDoResponse) {
+        //console.log(flickrResponse);
+        toDoResponse.forEach(function(item) {
+            var todoitem = ToDoToHTMLstr(item);
+            //console.log(bkitem);
+            $(".comments").prepend(todoitem);
+            //console.log($("main .photos").html());
 
-    $(".comment-input input").on("keypress", function (event) {
-        if (event.keyCode === 13) {
-            addCommentFromInputBox();
-        }
+        });
+
     });
 };
 
 $(document).ready(main);
+
+
+
+function ToDoToHTMLstr(todo) {
+
+    var result = "<p>" +
+     todo.content; + "</p>"
+
+    return result;
+};

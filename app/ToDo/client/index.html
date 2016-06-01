@@ -14,15 +14,13 @@
 
     <main>
       <section class='comment-input'>
+        <form action= "http://localhost:3000/add-todo" method="Post">
         <p>Add an item to the list:</p>
-        <input><button>+</button>
+        <input type="text" name="content"><button type= "submit">+</button>
       </section>
 
       <section class='comments'>
-        <p><b>2do List</b></p>
-        <p>Start p3 early</p>
-        <p>Review for Midterm F 5/6</p>
-        <p>Memorial Day plans 5/30</p>
+        
       </section>
     </main>
 
@@ -31,6 +29,6 @@
     </footer>
 
     <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
-    <script src="javascripts/app.js"></script>
+    <script src="javascripts/todos-app.js"></script>
   </body>
 </html>

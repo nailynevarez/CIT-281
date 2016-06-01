@@ -25,7 +25,7 @@ $(document).ready(main);
 
 function bookToHTMLstr(book) {
 
-    var result = "<h4 style='display:inline'>Item</h4><br>Title: " +
+    var result = "<h4 style='display:inline'>Item</h4><br> " +
         book.title + "<br>" + "Author: " + book.author + "<br>" + "Category: " + book.category + "<br>" + "ID: " + book._id + "<br>";
 
     return result;

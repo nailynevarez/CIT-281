@@ -44,7 +44,7 @@ app.post('/add-todo', function(req, res) {
       res.send('error saving todo item');
     } else {
       console.log(todo);
-      res.redirect("/index.html");;
+      res.redirect("/index.html");
     }
   });
 });
