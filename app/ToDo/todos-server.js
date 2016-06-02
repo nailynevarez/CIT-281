@@ -3,11 +3,24 @@ var app = express();
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var todos = require('./ToDo.model');
+var cfenv = require("cfenv");
 
-var port = 3000;
-var db = 'mongodb://localhost/example'
+//var port = 3000;
+port = process.env.PORT || 3000;
+//var db = 'mongodb://localhost/example'
+//mongoose.connect(db);
 
-mongoose.connect(db);
+//get our Org's mLab URL from cfenv
+//if it returns null, then connect to local MongoDB
+var appEnv = cfenv.getAppEnv();
+var mongoLabUrl = appEnv.getServiceURL('naily-mLab');
+if (mongoLabUrl == null) {
+  //local or prod development
+  mongoose.connect('mongodb://localhost/example');
+} else {
+  //cloud foundry
+  mongoose.connect(mongoLabUrl);
+}
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({

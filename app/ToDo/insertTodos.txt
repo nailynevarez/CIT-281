@@ -1,0 +1,11 @@
+db.todos.insert({
+  content: 'Finish Art 115 video project'
+  })
+
+db.todos.insert({
+  content:'Study for finals'
+  })
+
+db.todos.insert({
+  content: 'Complete paintings'
+  })
